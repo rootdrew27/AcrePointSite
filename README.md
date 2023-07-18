@@ -1,11 +1,16 @@
-# MyDjangoTemplate
+# AcrePointSite 
 
-Setup Commands:
-- python -m pip install Django==4.2.3
-- django-admin startproject --template https://github.com/rootdrew27/my-django-template/archive/dev.zip <your_project_name> .
-- python -m pip install -r requirements.txt
+Mock Site for Diego
 
-Notes: 
-- A Production branch can be created and maintained at any time during development
-- Push the Production branch to a Private Repo 
-- Add ENV_VARS.json to your .gitignore file
+Colors:
+--dark-purple: #0d0221ff;
+--dark-slate-gray: #2c514cff;
+--taupe-gray: #857885ff;
+--ghost-white: #fafaffff;
+--seal-brown: #6a381fff;
+
+Apps:
+Gallery -- photo gallery of jobs
+Profile (Bio) -- description of business
+Consultation -- Forms for setting up Consultation
+

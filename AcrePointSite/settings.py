@@ -18,6 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = secrets.getSecret("SECRET_KEY")
 
 INSTALLED_APPS = [
+    'Gallery',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

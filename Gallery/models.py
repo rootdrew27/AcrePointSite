@@ -7,6 +7,7 @@ class StyleCategory(models.Model):
     def __str__(self):
         return self.description
 
+
 class ImageCard(models.Model):
     description = models.CharField(max_length=100)
     image = models.ImageField(width_field=480, height_field=480)
@@ -16,8 +17,9 @@ class ImageCard(models.Model):
     #ToDo: order by 'most clicks' or by Diegos preference
     class Meta:
         ordering = ["-date_created"]
+        
 
     def __str__(self):
         return self.description
         
-
+    

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_content %}
+
+<div>
+  {% include "_images.html" with styles={{styles}}%}
+</div>
+
+{% include "./_images.html" %}
+
+{% endblock %}
+

@@ -1,14 +1,11 @@
 from django.shortcuts import render
 from Gallery.models import *
 
-
-
 # Create your views here.
 def GalleryIndex(request):
     styles = StyleCategory.objects.all()
 
     context = {
-
         'styles': styles
     }
     return render(request, "index.html", context)

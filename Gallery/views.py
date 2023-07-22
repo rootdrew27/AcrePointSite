@@ -8,7 +8,7 @@ def GalleryIndex(request):
     context = {
         'styles': styles
     }
-    return render(request, "index.html", context)
+    return render(request, "Gallery/index.html", context)
 
 
 def GalleryFilter(request, *styleCategory):

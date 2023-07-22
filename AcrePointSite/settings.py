@@ -2,7 +2,8 @@ from pathlib import Path
 import os
 from EnvVarReader.env_var_reader import Secrets
 
-secrets = Secrets("ENV_VARS.json")
+secrets = Secrets("./EnvVarReader/ENV_VARS.json")
+
 
 # For Production
 # -------------------
@@ -43,7 +44,8 @@ ROOT_URLCONF = 'AcrePointSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['AcrePointSite/templates/'],
+        'DIRS': ['AcrePointSite/templates/',
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -62,6 +64,8 @@ import dj_database_url
 
 DATABASES = {
 
+
+
     # Settings to use with a Connection String
     # 'default': {
     #     dj_database_url.config(
@@ -72,7 +76,7 @@ DATABASES = {
 
         'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'AcrePointSite_Database',
+        'NAME': secrets.getSecret("DATABASE_NAME"),
         'USER': 'rooty',
         'PASSWORD': secrets.getSecret("DATABASE_PASSWORD"),
         'HOST': 'localhost',
@@ -105,7 +109,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATICFILES_DIR = []
+STATICFILES_DIR = [
+    BASE_DIR / 'bootstrap/js',
+    BASE_DIR / 'bootstrap/css',
+
+]
 
 STATIC_URL = '/static/'
 

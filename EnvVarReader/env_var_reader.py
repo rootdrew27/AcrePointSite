@@ -17,7 +17,7 @@ class Secrets():
             error_msg = "The file: {0} failed to open.. Has it been created?".format(filename)
             print(error_msg)
 
-    def getSecret(self, setting:str):
+    def getSecret(self, setting:str) -> str: 
         """Get the secret variable or return explicit exception."""
         try:
             return self.secrets[setting]

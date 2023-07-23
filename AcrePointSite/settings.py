@@ -109,20 +109,17 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATICFILES_DIR = [
-    BASE_DIR / 'bootstrap/js',
-    BASE_DIR / 'bootstrap/css',
+STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'bootstrap')
 ]
-
-STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SESSION_ENGINE = "django.contrib.sessions.backends.file"
 
 SESSION_FILE_PATH = os.path.join(BASE_DIR, 'SessionFiles')
-
 
 
 # SETTINGS for Production

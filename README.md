@@ -14,3 +14,6 @@ Gallery -- photo gallery of jobs
 Profile (Bio) -- description of business
 Consultation -- Forms for setting up Consultation
 
+# ToDo:
+- Serve static files (bootstrap and jquery) (this should be the default in your template as well)
+- keep reading the mdn article

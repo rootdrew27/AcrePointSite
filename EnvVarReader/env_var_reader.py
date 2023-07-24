@@ -1,3 +1,5 @@
+from pathlib import Path
+import os
 import json
 from django.core.exceptions import ImproperlyConfigured
 
@@ -11,11 +13,14 @@ class Secrets():
             filename (str): a json file
         """
         try:
-            with open(filename) as f:
+            EnvVarReader_Dir = Path(__file__).resolve().parent
+            file_path = os.path.join(EnvVarReader_Dir, filename)
+            with open(file_path) as f:
                 self.secrets = json.loads(f.read())
         except OSError:
-            error_msg = "The file: {0} failed to open.. Has it been created?".format(filename)
-            print(error_msg)
+            error_msg = "The file: {0} failed to open.. Is it in the EnvVarReader?".format(filename)
+            raise ImproperlyConfigured(error_msg)
+            
 
     def getSecret(self, setting:str) -> str: 
         """Get the secret variable or return explicit exception."""

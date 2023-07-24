@@ -1,6 +1,8 @@
+{% load static %}
 
-<h1>HIII</h1>
-
-{% for style in styles %}
-    <p>{{ style.description }}</p>
+<div>
+{% for image_card in image_cards %}
+    <img src="{% get_static_prefix %}{{ image_card.image }}" alt=""></p>
 {% endfor %}
+</div>
+

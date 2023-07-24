@@ -2,14 +2,13 @@ from pathlib import Path
 import os
 from EnvVarReader.env_var_reader import Secrets
 
-secrets = Secrets("./EnvVarReader/ENV_VARS.json")
+secrets = Secrets("ENV_VARS.json")
 
 
 # For Production
 # -------------------
 # Set DEBUG to False 
-# Set database (migrate if necessary
-# )
+# Set database (migrate if necessary)
 # Adjust the settings at the bottom of this file 
 # -------------------
 DEBUG = True
@@ -109,11 +108,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'bootstrap')
 ]
+
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -121,13 +125,15 @@ SESSION_ENGINE = "django.contrib.sessions.backends.file"
 
 SESSION_FILE_PATH = os.path.join(BASE_DIR, 'SessionFiles')
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+
 
 # SETTINGS for Production
 if (DEBUG == False):
 
     ALLOWED_HOSTS = []
 
-    STATIC_ROOT = os.path.join( BASE_DIR, 'static_root' )
+
 
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 

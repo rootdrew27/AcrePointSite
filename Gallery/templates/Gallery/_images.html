@@ -1,8 +1,14 @@
 {% load static %}
 
-<div>
+<div class="row gy-4 m-4">
+
 {% for image_card in image_cards %}
-    <img src="{% get_static_prefix %}{{ image_card.image }}" alt=""></p>
+    <div class="col-md-4">
+        <div class="card h-100 w-100">
+            <img src="{% get_static_prefix %}{{ path_to_imgs }}{{ image_card.image }}" alt="" class="object-fit-contain">
+        </div>
+    </div>
 {% endfor %}
+
 </div>
 

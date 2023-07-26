@@ -62,9 +62,6 @@ WSGI_APPLICATION = 'AcrePointSite.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-
-
-
     # Settings to use with a Connection String
     # 'default': {
     #     dj_database_url.config(
@@ -125,7 +122,7 @@ SESSION_ENGINE = "django.contrib.sessions.backends.file"
 
 SESSION_FILE_PATH = os.path.join(BASE_DIR, 'SessionFiles')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+
 
 
 # SETTINGS for Production
@@ -133,7 +130,7 @@ if (DEBUG == False):
 
     ALLOWED_HOSTS = []
 
-
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 

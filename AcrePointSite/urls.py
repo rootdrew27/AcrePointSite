@@ -4,5 +4,5 @@ import Gallery
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Gallery.urls'), name="GalleryIndex")
+    path('Gallery/', include('Gallery.urls'))
 ]

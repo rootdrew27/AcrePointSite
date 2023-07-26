@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_content %}
+  <img src="{% get_static_prefix %}{{ path_to_imgs }}{{ image_card.image }}" alt="" class="object-fit-cover">
+{% endblock %}
+
+
+{% block script_content %}
+  <script src="{% static 'Gallery/scripts/main.js' %}"></script>
+{% endblock %}

@@ -12,6 +12,13 @@ def GalleryIndex(request):
     }
     return render(request, "Gallery/index.html", context)
 
+def GalleryDetail(request, pk):
+    image_card = ImageCard.objects.get(pk=pk)
+    context = {
+        'image_card': image_card,
+        'path_to_imgs': ImageCard.path_to_imgs()
+    }
+    return render(request, 'Gallery/detail.html', context)
 
 def GalleryFilter(request, Categories:list):
   
@@ -23,6 +30,6 @@ def GalleryFilter(request, Categories:list):
         'image_cards': image_cards,
         'path_to_imgs': ImageCard.path_to_imgs()
     }
-    return render(request, "_images.html", context)
+    return render(request, "Gallery/_images.html", context)
 
 

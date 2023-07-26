@@ -15,5 +15,5 @@ Profile (Bio) -- description of business
 Consultation -- Forms for setting up Consultation
 
 # ToDo:
-- Serve static files (bootstrap and jquery) (this should be the default in your template as well)
-- keep reading the mdn article
+- implement 'url' template tag
+- find a better way to do path_to_img (template tag ??)

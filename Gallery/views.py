@@ -5,10 +5,10 @@ from Gallery.models import *
 def GalleryIndex(request):
     categories = Category.objects.all()
     image_cards = ImageCard.objects.all()
+
     context = {
         'categories': categories,
         'image_cards': image_cards,
-        'path_to_imgs': ImageCard.path_to_imgs()
     }
     return render(request, "Gallery/index.html", context)
 
@@ -16,7 +16,6 @@ def GalleryDetail(request, pk):
     image_card = ImageCard.objects.get(pk=pk)
     context = {
         'image_card': image_card,
-        'path_to_imgs': ImageCard.path_to_imgs()
     }
     return render(request, 'Gallery/detail.html', context)
 
@@ -28,7 +27,6 @@ def GalleryFilter(request, Categories:list):
     
     context = {
         'image_cards': image_cards,
-        'path_to_imgs': ImageCard.path_to_imgs()
     }
     return render(request, "Gallery/_images.html", context)
 

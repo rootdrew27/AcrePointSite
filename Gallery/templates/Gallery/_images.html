@@ -4,9 +4,12 @@
 
 {% for image_card in image_cards %}
     <div class="col-md-4">
-        <div class="">
-            <img src="{% get_static_prefix %}{{ path_to_imgs }}{{ image_card.image }}" alt="" class="object-fit-contain">
-        </div>
+
+            <div class="card">
+                <img src="{% get_static_prefix %}{{ image_card.image }}" alt="" class="object-fit-cover">
+            </div>
+
+
         <button class="btn btn-primary">
             <a href="{% url 'GalleryDetail' pk=image_card.pk %}" style="color: white">See More</a>
         </button>

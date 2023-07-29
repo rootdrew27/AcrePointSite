@@ -43,7 +43,7 @@ ROOT_URLCONF = 'AcrePointSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['AcrePointSite/templates/',
+        'DIRS': [os.path.join(BASE_DIR, 'AcrePointSite', 'templates'),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -77,6 +77,9 @@ DATABASES = {
         'PASSWORD': secrets.getSecret("DATABASE_PASSWORD"),
         'HOST': 'localhost',
         'PORT': '',
+        'OPTIONS': {
+            'application_name': "AcrePointSite" #this is displayed in pgAdmin
+        }
     }
 }
 
@@ -108,7 +111,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'bootstrap')
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 

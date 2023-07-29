@@ -26,3 +26,4 @@ db.sqlite3-journal
 # Secrets
 ENV_VARS.json
 
+# STATIC_ROOT

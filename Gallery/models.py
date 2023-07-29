@@ -24,7 +24,7 @@ class Category(models.Model):
 
 class ImageCard(models.Model):
     description = models.CharField(null=True, blank=True, max_length=200)
-    image = models.ImageField(upload_to="Gallery/images/", blank=True, null=True)
+    image = models.ImageField(upload_to="Gallery/", blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
     category = models.ManyToManyField('Category', related_name='image_cards', default='NA')

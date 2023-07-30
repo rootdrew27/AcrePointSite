@@ -29,6 +29,7 @@ class ImageCard(models.Model):
     date_update = models.DateTimeField(auto_now=True)
     category = models.ManyToManyField('Category', related_name='image_cards', default='NA')
 
+    
     #ToDo: order by 'most clicks' or by Diegos preference
     class Meta:
         ordering = ["-date_created"]

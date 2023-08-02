@@ -1,11 +1,19 @@
 from django.shortcuts import render
-from Gallery.models import *
+from Gallery.models import Category, ImageCard
 
 # Create your views here.
 def GalleryIndex(request):
-    categories = Category.objects.all()
-    image_cards = ImageCard.objects.all()
+    try: 
+        categories = Category.objects.all()
+        image_cards = ImageCard.objects.all()
 
+        for image_card in image_cards:
+            image_card.image = image_card.compress_image()
+            
+    except FileNotFoundError as ex:
+        #Log 
+        pass
+    
     context = {
         'categories': categories,
         'image_cards': image_cards,

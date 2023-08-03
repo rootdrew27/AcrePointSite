@@ -16,4 +16,8 @@ Consultation -- Forms for setting up Consultation
 
 # ToDo:
 - implement 'url' template tag
-- find a better way to do path_to_img (template tag ??)
+- Do image sorting on the frontend 
+
+# Post-MVP
+- Ensure that files exist b4 sending to client
+- optimize querys (in Gallery IndexView, a better should be made to get all the data needed)

@@ -1,18 +1,17 @@
 {% load static %}
 <div class="row gy-6 m-4">
 
-{% for image_card in image_cards %}
-    <div class="col-md-4">
-
-            <div class="card">
-                <img src="{{ image_card.image.url }}" alt="" class="object-fit-cover">
-            </div>
-
-
-        <button class="btn btn-primary">
-            <a href="{% url 'GalleryDetail' pk=image_card.pk %}" style="color: white">See More</a>
-        </button>
-    </div>
+{% for i in image_cards_with_categories %}
+        <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="{{ i.0.image.url }}" alt="" class="card-img-top" style="height:75%;width:100%" categories="{{ i.1 }}">
+                    <div class="card-body">
+                        <button class="btn btn-primary">
+                            <a href="{% url 'GalleryDetail' pk=i.0.pk %}" style="color: white">See More</a>
+                        </button>
+                    </div>
+                </div>
+        </div>
 {% endfor %}
 
 </div>

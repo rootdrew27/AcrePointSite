@@ -19,18 +19,12 @@ class ImageCard(models.Model):
     image = models.ImageField(upload_to="Gallery/", blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
-    category = models.ManyToManyField('Category', related_name='image_cards', default='NA')
+    categories = models.ManyToManyField('Category', related_name='image_cards', default='NA')
 
     
     #ToDo: order by 'most clicks' or by Diegos preference
     class Meta:
         ordering = ["-date_created"]
-
-    def resize_image(self):
-        img = Image.open(self.image, 'r')
-        img.load()
-        img.resize((300, 300))
-        return img
 
     def __str__(self):
         return self.description

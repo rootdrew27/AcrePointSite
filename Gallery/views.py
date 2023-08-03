@@ -4,11 +4,20 @@ from Gallery.models import *
 # Create your views here.
 def GalleryIndex(request):
     categories = Category.objects.all()
-    image_cards = ImageCard.objects.all()
+    image_cards = list(ImageCard.objects.all())
+
+    image_cards_with_categories = []
+
+    for image_card in image_cards:
+        categories = list(image_card.categories.all())
+        categories_titles = [] 
+        for category in categories:
+            categories_titles.append(category.title)
+        image_cards_with_categories.append((image_card, ','.join(categories_titles)))
 
     context = {
         'categories': categories,
-        'image_cards': image_cards,
+        'image_cards_with_categories': image_cards_with_categories
     }
     return render(request, "Gallery/index.html", context)
 

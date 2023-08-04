@@ -11,7 +11,7 @@ Colors:
 
 Apps:
 Gallery -- photo gallery of jobs
-Profile (Bio) -- description of business
+Landing Page -- description of business
 Consultation -- Forms for setting up Consultation
 
 # ToDo:
@@ -21,3 +21,4 @@ Consultation -- Forms for setting up Consultation
 # Post-MVP
 - Ensure that files exist b4 sending to client
 - optimize querys (in Gallery IndexView, a better should be made to get all the data needed)
+- Alter (in some way) the Gallery models s.t. the model fields accurately reflect the models' relationships

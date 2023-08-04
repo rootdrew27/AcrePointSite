@@ -9,13 +9,16 @@ def GalleryIndex(request):
     image_cards_with_categories = []
 
     for image_card in image_cards:
-        categories = list(image_card.categories.all())
+        img_card_categories = list(image_card.categories.all())
         categories_titles = [] 
-        for category in categories:
+        for category in img_card_categories:
             categories_titles.append(category.title)
         image_cards_with_categories.append((image_card, ','.join(categories_titles)))
 
+    page_title = "Our Projects"
+
     context = {
+        'page_title': page_title,
         'categories': categories,
         'image_cards_with_categories': image_cards_with_categories
     }
@@ -28,15 +31,16 @@ def GalleryDetail(request, pk):
     }
     return render(request, 'Gallery/detail.html', context)
 
-def GalleryFilter(request, Categories:list):
+
+# def GalleryFilter(request, Categories:list):
   
-    image_cards = Category.objects.none() #Try these instead: django.db.models.query.EmptyQuerySet OR django.db.models.query.QuerySet
-    for category in Categories:
-        image_cards = image_cards | ImageCard.objects.filter(category=category)
+#     image_cards = Category.objects.none() #Try these instead: django.db.models.query.EmptyQuerySet OR django.db.models.query.QuerySet
+#     for category in Categories:
+#         image_cards = image_cards | ImageCard.objects.filter(category=category)
     
-    context = {
-        'image_cards': image_cards,
-    }
-    return render(request, "Gallery/_images.html", context)
+#     context = {
+#         'image_cards': image_cards,
+#     }
+#     return render(request, "Gallery/_images.html", context)
 
 

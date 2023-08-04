@@ -1,0 +1,15 @@
+.btn.category {
+    color:darkgray;
+    background-color: white;
+}
+
+.btn.category:hover {
+    background-color: orangered;
+    color:white;
+}
+
+.btn.category[activated] {
+    background-color: orangered;
+    color:white;
+}
+

@@ -19,9 +19,8 @@ Landing Page -- description of business
 Consultation -- Forms for setting up Consultation
 
 # ToDo
-- implement 'url' template tag
-- Do image sorting on the frontend 
-- Apply Bootstrap5.3 to the GalleryApp
+- Get Gallery working (see dg-README.md)
+- Add footer
 
 # Post-MVP
 - Ensure that files exist b4 sending to client

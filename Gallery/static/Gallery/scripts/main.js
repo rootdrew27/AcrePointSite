@@ -1,92 +1,112 @@
-
-
 $(function() {
     console.log("Document is Ready");
 
-    let dg_categoryButtons,
-    dg_allCategoriesButton,
-    dg_categoiresToDisplay,
-    dg_imgsToDisplay, //(when this array is empty, all images are shown)
-    dg_imgs;
+    let dg_imgs = $('.dg-img');
 
-    //Event listeners
+    //Arrays used for Event logic 
+    let dg_imgsToDisplay = []; 
+    let dg_activeCategories = []; //this is used in the 'otherCategoryButtons' event to determine what images to show, but it is not necessarily representative of what images/categories are being shown
 
-    //Change button appearance
-    //Update the 'visible' categories (and thus the images)
-    //If button has class all-categories -> remove 'activated' from all other buttons
-    //If button does NOT have class all-categories -> remove 'activated' from 'All' button
+    //Buttons
+    let dg_allCategoriesButton = $('.dg-allcategories'); // the 'All' category button
+    let dg_otherCategoryButtons = $('.dg-img'); //the other category buttons 
 
-    dg_imgs = $('.dg-img');
-
-    //list of buttons
-    dg_categoryButtons = $('.btn.dg-category');
-    //ALL button
-    dg_allCategoriesButton = $('.btn.dg-allcategories');
-
-    //ToDo: break into multiple events 
-    //One for the 'All' button, and events for each other button (these would be the same event) 
-    dg_categoryButtons.on('click', function () {
-
-        var thisButton = $(this);
-
+    //Event handler for allCategories Button (ie 'All' button)
+    //Shows or hides all images (potentially deactivaes other buttons)
+    dg_allCategoriesButton.on('click', function(jqEvent) {
+        var button = $(this);
         //if thisButton is not activated...
-        if (thisButton.attr('dg-activated') === undefined) {
+        //activate it
+        //display all images
+        //reset the array of categories to display (this is used in the other event to determine what images to show, but it is not necessarily representative of what categories are being shown)
 
-            thisButton.attr('dg-activated', true);// activate it 
+        //else...
+        //deactivate it
+        //hide all images
 
-            
-            if(thisButton.hasClass('dg-allcategories') === true) { //if this is the 'All' button..
-                dg_categoryButtons.each(function(i, e) { // deactivate other buttons
-                    if(i === 0){ return; } //ie. continue
-                    $(e).removeAttr('dg-activated');
-                })
-                //show all images
-                dg_imgs.each(function(i, e){
-                    $(this).removeAttr('hidden');
-                });
-                dg_categoiresToDisplay = []; //reset
-                dg_imgsToDisplay = []; //reset (when this array is empty, all images are shown)
-            }
-            else { //thisButton is not the 'All' button
-                dg_allCategoriesButton.removeAttr('dg-activated'); //deactivate 'All' button
+        if (button.attr('dg-activated') === undefined) {
+            button.attr('dg-activated', true);// activate it
+            dg_imgs.removeAttr('hidden');
 
-                var thisCateogry = $(this).attr('dg-category');
-
-                dg_categoiresToDisplay.append(thisCateogry); //add category to display list
-
-                dg_imgs.each(function(index, thisImage){
-                                        
-                    var img_categories = $(thisImage).attr('dg-categories').split(','); //current image's categories
-
-                    img_categories.forEach(function(i, img_category){
-                        if(img_category === thisCateogry){
-                            dg_imgsToDisplay.append(thisImage);
-                        }
-                    })
-                })
-                if (dg_categoiresToDisplay.length === 1){
-                    dg_imgs.attr('hidden','true');
-                    $(dg_imgsToDisplay).removeAttr('hidden');
-                }
-                else { // dg_categoriesToDisplay.length > 1
-                    $(dg_imgsToDisplay).removeAttr('hidden');
-                }
-                // dg_imgsToDisplay = []; //reset 
-            }
+            dg_otherCategoryButtons.each(function(index, button) { // deactivate other buttons
+                $(button).removeAttr('dg-activated');
+            });
+            dg_activeCategories = []; //reset 
         }
-        else { //this button is activated
-            thisButton.removeAttr('dg-activated'); //deactivate it
+        else {
+            button.removeAttr('dg-activated'); //deactivate it
+            dg_imgs.attr('hidden', true);
         }
 
     });
 
-    //Add images to array
-    //Keep track of 'activated' categories
-    //Display images which match any category in the category array
 
 
+    //Event handler for all other buttons
+    dg_otherCategoryButtons.each(function(index, b) {
 
+        var button = $(b);
+        button.on('click', function() {
 
-    
+            //IF this button is not activated...
+            //activate it
+            //deactivate 'All' button
+            //add this category to the activeCategory Dict
+
+            //ELSE the button is activated...
+            //deactivate it
+            //remove this category from the active category arr
+            
+            //FINALLY..
+            //loop through all images
+                //IF the image has a category in activeCategories...
+                //display image
+                //ELSE hide image
+
+            if (button.attr('dg-activated') === undefined) {
+
+                button.attr('dg-activated', true);// activate the button 
+                dg_allCategoriesButton.removeAttr('dg-activated'); //deactivate 'All' button
+                dg_activeCategories.push(button.attr('dg-category')); //add the button to activeCategories
+            }
+            else {
+                button.removeAttr('dg-activated');// deactivate button
+            
+                dg_activeCategories = dg_activeCategories.filter(function(arrElement){ //remove category from activeCategory array
+                    return arrElement !== button.attr('gd-category');
+                });
+            }
+
+            dg_imgs.each(function(index, image) {
+                var img = $(image);
+                var img_categories = img.attr('categories').split(',')//get img categories
+
+                //loop through images
+                //loop through image's categories and look for a match in the activeCategories array
+                //IF there is match
+                    //set the flag
+                    //exit the loop
+                //ELSE 
+                //continue
+
+                var inTheActiveArrayFlag = 0;
+                img_categories.each(function(index, img_category){
+
+                    dg_activeCategories.forEach( (activeCategory) => {
+                        if (activeCategory === img_category){ 
+                            inTheActiveArrayFlag = 1;
+                            return false; //exit loop
+                        }
+                    });
+                });
+                if (inTheActiveArrayFlag === 1){
+                    img.removeAttr('hidden');
+                }
+                else {
+                    img.attr('hidden');
+                }
+            });
+
+        });
+    })
 });
-

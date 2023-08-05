@@ -4,7 +4,7 @@
 {% for image_card_tuple in image_cards_with_categories %}
         <div class="col-md-4">
                 <div class="card h-100">
-                    <img src="{{ image_card_tuple.0.image.url }}" alt="" class="card-img-top" style="height:75%;width:100%" categories="{{ image_card_tuple.1 }}">
+                    <img src="{{ image_card_tuple.0.image.url }}" alt="" class="dg-img card-img-top" style="height:75%;width:100%" dg-categories="{{ image_card_tuple.1 }}">
                     <div class="card-body">
                             <a href="{% url 'GalleryDetail' pk=image_card_tuple.0.pk %}" class="btn btn-primary" style="color: white">See More</a>
                     </div>

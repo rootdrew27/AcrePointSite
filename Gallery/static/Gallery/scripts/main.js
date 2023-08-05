@@ -1,7 +1,7 @@
 $(function() {
     console.log("Document is Ready");
 
-    let dg_imgs = $('.dg-img');
+    let dg_img_cards = $('.dg-img_card');
 
     //Arrays used for Event logic 
     let dg_imgsToDisplay = []; 
@@ -9,7 +9,7 @@ $(function() {
 
     //Buttons
     let dg_allCategoriesButton = $('.dg-allcategories'); // the 'All' category button
-    let dg_otherCategoryButtons = $('.dg-img'); //the other category buttons 
+    let dg_otherCategoryButtons = $('.dg-category'); //the other category buttons 
 
     //Event handler for allCategories Button (ie 'All' button)
     //Shows or hides all images (potentially deactivaes other buttons)
@@ -26,7 +26,7 @@ $(function() {
 
         if (button.attr('dg-activated') === undefined) {
             button.attr('dg-activated', true);// activate it
-            dg_imgs.removeAttr('hidden');
+            dg_img_cards.removeAttr('hidden');
 
             dg_otherCategoryButtons.each(function(index, button) { // deactivate other buttons
                 $(button).removeAttr('dg-activated');
@@ -35,7 +35,7 @@ $(function() {
         }
         else {
             button.removeAttr('dg-activated'); //deactivate it
-            dg_imgs.attr('hidden', true);
+            dg_img_cards.attr('hidden', true);
         }
 
     });
@@ -43,11 +43,11 @@ $(function() {
 
 
     //Event handler for all other buttons
-    dg_otherCategoryButtons.each(function(index, b) {
+    dg_otherCategoryButtons.each(function() {
 
-        var button = $(b);
+        var button = $(this);
         button.on('click', function() {
-
+            var button = $(this);
             //IF this button is not activated...
             //activate it
             //deactivate 'All' button
@@ -71,15 +71,15 @@ $(function() {
             }
             else {
                 button.removeAttr('dg-activated');// deactivate button
-            
+                $()
                 dg_activeCategories = dg_activeCategories.filter(function(arrElement){ //remove category from activeCategory array
-                    return arrElement !== button.attr('gd-category');
+                    return arrElement !== button.attr('dg-category');
                 });
             }
 
-            dg_imgs.each(function(index, image) {
-                var img = $(image);
-                var img_categories = img.attr('categories').split(',')//get img categories
+            dg_img_cards.each(function() {
+                var img_card = $(this);
+                var img_categories = img_card.attr('dg-categories').split(',')//get img categories
 
                 //loop through images
                 //loop through image's categories and look for a match in the activeCategories array
@@ -90,7 +90,7 @@ $(function() {
                 //continue
 
                 var inTheActiveArrayFlag = 0;
-                img_categories.each(function(index, img_category){
+                img_categories.forEach( (img_category) => {
 
                     dg_activeCategories.forEach( (activeCategory) => {
                         if (activeCategory === img_category){ 
@@ -100,10 +100,10 @@ $(function() {
                     });
                 });
                 if (inTheActiveArrayFlag === 1){
-                    img.removeAttr('hidden');
+                    img_card.removeAttr('hidden');
                 }
                 else {
-                    img.attr('hidden');
+                    img_card.attr('hidden', true);
                 }
             });
 

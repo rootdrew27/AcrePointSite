@@ -13,3 +13,17 @@
     color:white;
 }
 
+.btn.dg-allcategories {
+    color:darkgray;
+    background-color: white;
+}
+
+.btn.dg-allcategories:hover {
+    background-color: orangered;
+    color:white;
+}
+
+.btn.dg-allcategories[dg-activated] {
+    background-color: orangered;
+    color:white;
+}

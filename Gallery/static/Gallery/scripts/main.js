@@ -26,7 +26,7 @@ $(function() {
 
         if (button.attr('dg-activated') === undefined) {
             button.attr('dg-activated', true);// activate it
-            dg_img_cards.removeAttr('hidden');
+            dg_img_cards.parent().css('display', 'block');
 
             dg_otherCategoryButtons.each(function(index, button) { // deactivate other buttons
                 $(button).removeAttr('dg-activated');
@@ -35,7 +35,7 @@ $(function() {
         }
         else {
             button.removeAttr('dg-activated'); //deactivate it
-            dg_img_cards.attr('hidden', true);
+            dg_img_cards.parent().hide();
         }
 
     });
@@ -100,10 +100,10 @@ $(function() {
                     });
                 });
                 if (inTheActiveArrayFlag === 1){
-                    img_card.removeAttr('hidden');
+                    img_card.parent().show();
                 }
                 else {
-                    img_card.attr('hidden', true);
+                    img_card.parent().hide();
                 }
             });
 

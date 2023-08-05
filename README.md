@@ -19,7 +19,7 @@ Landing Page -- description of business
 Consultation -- Forms for setting up Consultation
 
 # ToDo
-- Get Gallery working (see dg-README.md)
+- Gallery Branch (see dg-README.md)
 - Add footer
 
 # Post-MVP

@@ -1,6 +1,7 @@
 # Dynamic Gallery
 
 # ToDo
+- Merge with Gallery Branch when Done
 - deal with the scroll bar
 
 # Post-MVP

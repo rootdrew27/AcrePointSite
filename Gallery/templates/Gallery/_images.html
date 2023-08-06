@@ -1,10 +1,10 @@
 {% load static %}
-<div class="row gy-6 m-4">
+<div class="row">
 
 {% for image_card_tuple in image_cards_with_categories %}
-        <div class="col-md-4">
+        <div class="col-sm-12 col-md-6  col-xl-4 py-3 px-3">
                 <div class="card h-100 dg-img_card" dg-categories="{{ image_card_tuple.1 }}">
-                    <img src="{{ image_card_tuple.0.image.url }}" alt="" class="dg-img card-img-top" style="height:75%;width:100%" >
+                    <img src="{{ image_card_tuple.0.image.url }}" alt="" class="dg-img card-img-top">
                     <div class="card-body">
                             <a href="{% url 'GalleryDetail' pk=image_card_tuple.0.pk %}" class="btn btn-primary" style="color: white">See More</a>
                     </div>

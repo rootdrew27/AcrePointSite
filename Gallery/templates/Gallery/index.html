@@ -6,6 +6,8 @@
 
 
 {% block dynamic_gallery_styles %}
+<link rel="stylesheet" href="{% static 'Gallery/css/owl.carousel.css' %}">
+<link rel="stylesheet" href="{% static 'Gallery/css/owl.theme.css' %}"> 
 <link rel="stylesheet" href="{% static 'Gallery/css/style.css' %}">
 {% endblock %}
 
@@ -15,14 +17,17 @@
   {% include "Gallery/_categories.html" %}
 </div>
 
-<div>
-  {% include "Gallery/_images.html" %}
-</div>
+<section class="pt-3">
+  <div class="container-lg">
+    {% include "Gallery/_images.html" %}
+  </div>
+</section>
 
 {% endblock %}
 
 
 {% block dynamic_gallery_scripts %}
+  <script src="{% static 'Gallery/scripts/owl.carousel.min.js'%}"></script>
   <script src="{% static 'Gallery/scripts/main.js' %}"></script>
 {% endblock %}
 

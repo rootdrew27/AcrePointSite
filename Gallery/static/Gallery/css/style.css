@@ -1,6 +1,9 @@
+
+/* Category Buttons */
 .btn.dg-category {
     color:darkgray;
     background-color: white;
+    right: 50%;
 }
 
 .btn.dg-category:hover {
@@ -13,6 +16,7 @@
     color:white;
 }
 
+/* All Category Button */
 .btn.dg-allcategories {
     color:darkgray;
     background-color: white;
@@ -27,3 +31,18 @@
     background-color: orangered;
     color:white;
 }
+
+/* Images */
+.dg-img {
+
+    height: 250px;
+    width:100%;
+}
+
+/* owl carousel */
+.categories-owl-carousel .dg-category{
+    margin: 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+
+  }

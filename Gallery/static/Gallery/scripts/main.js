@@ -1,11 +1,16 @@
 $(function() {
     console.log("Document is Ready");
 
+    $('.categories-owl-carousel').owlCarousel({
+        pagination: false,
+        itemsMobile: [479, 3]
+    });
+
+    //All image cards
     let dg_img_cards = $('.dg-img_card');
 
-    //Arrays used for Event logic 
-    let dg_imgsToDisplay = []; 
-    let dg_activeCategories = []; //this is used in the 'otherCategoryButtons' event to determine what images to show, but it is not necessarily representative of what images/categories are being shown
+    //Array used for Event logic 
+    let dg_activeCategories = []; //this is used in the 'otherCategoryButtons' event to determine what images to show, the 'All' button event emptys this array because the event also deactivates the other buttons (this prevents multpile of the same category from being added)
 
     //Buttons
     let dg_allCategoriesButton = $('.dg-allcategories'); // the 'All' category button
@@ -40,9 +45,8 @@ $(function() {
 
     });
 
-
-
     //Event handler for all other buttons
+    //Shows or hides image cards based on selected categories
     dg_otherCategoryButtons.each(function() {
 
         var button = $(this);
@@ -108,5 +112,8 @@ $(function() {
             });
 
         });
-    })
+    });
+
+
+
 });

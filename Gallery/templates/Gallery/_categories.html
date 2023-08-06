@@ -1,6 +1,6 @@
 <section class="pt-5">
     <div class="container-fluid ">
-        <div class="d-flex flex-row gy-2 pb-3 border-bottom ">
+        <div class="d-flex flex-row pb-3 border-bottom categories-owl-carousel owl-theme">
             <button type="button" class="btn dg-allcategories mx-1 " dg-activated style="">All</button>
             {% for category in categories %}
                 <button type="button" class="btn dg-category mx-1" dg-category="{{ category.title }}" style="">{{category.title}}</button>

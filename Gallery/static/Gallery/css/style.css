@@ -1,15 +1,29 @@
-.btn.category {
+.btn.dg-category {
     color:darkgray;
     background-color: white;
 }
 
-.btn.category:hover {
+.btn.dg-category:hover {
     background-color: orangered;
     color:white;
 }
 
-.btn.category[activated] {
+.btn.dg-category[dg-activated] {
     background-color: orangered;
     color:white;
 }
 
+.btn.dg-allcategories {
+    color:darkgray;
+    background-color: white;
+}
+
+.btn.dg-allcategories:hover {
+    background-color: orangered;
+    color:white;
+}
+
+.btn.dg-allcategories[dg-activated] {
+    background-color: orangered;
+    color:white;
+}

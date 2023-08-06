@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   {% block style_content %}{% endblock %}
+  {% block dynamic_gallery_styles %}{% endblock %}
 
   <title>{% block title %}AcrePoint Cabinets{% endblock %}</title> <!-- Blocks will default to the code/text in them, but can be overwritten -->
 </head>
@@ -24,6 +25,7 @@
   <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script> <!--includes Popper-->
 
   {% block script_content %}{% endblock %}
+  {% block dynamic_gallery_scripts %}{% endblock %}
 
   <footer></footer>
 

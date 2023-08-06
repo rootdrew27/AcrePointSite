@@ -1,9 +1,9 @@
 <section class="pt-5">
     <div class="container-fluid ">
         <div class="d-flex flex-row gy-2 pb-3 border-bottom ">
-            <button type="button" class="btn category allcategories mx-1 " activated style="">All</button>
+            <button type="button" class="btn dg-allcategories mx-1 " dg-activated style="">All</button>
             {% for category in categories %}
-                <button type="button" class="btn category mx-1" style="">{{category.title}}</button>
+                <button type="button" class="btn dg-category mx-1" dg-category="{{ category.title }}" style="">{{category.title}}</button>
             {% endfor %}
         </div>
     </div>

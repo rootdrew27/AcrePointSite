@@ -3,7 +3,6 @@
 .btn.dg-category {
     color:darkgray;
     background-color: white;
-    right: 50%;
 }
 
 .btn.dg-category:hover {
@@ -41,8 +40,6 @@
 
 /* owl carousel */
 .categories-owl-carousel .dg-category{
-    margin: 10px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
+    
 
   }

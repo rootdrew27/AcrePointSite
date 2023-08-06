@@ -17,6 +17,7 @@ Consultation -- Forms for setting up Consultation
 # ToDo:
 - implement 'url' template tag
 - Do image sorting on the frontend 
+- clean up project Dir
 
 # Post-MVP
 - Ensure that files exist b4 sending to client

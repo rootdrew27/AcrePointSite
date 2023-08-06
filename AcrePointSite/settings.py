@@ -133,7 +133,6 @@ STORAGES = {
     },
 }
 
-
 # SETTINGS for Production
 if (DEBUG == False):
 

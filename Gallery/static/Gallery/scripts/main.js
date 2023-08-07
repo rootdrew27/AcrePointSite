@@ -1,7 +1,7 @@
 $(function() {
     console.log("Document is Ready");
 
-    $('.owl-carousel').owlCarousel({
+    $('#categories-owl-carousel').owlCarousel({
         dotsContainer: '#customDots',
     });
 
@@ -43,19 +43,9 @@ $(function() {
             }
 
         });
-
-        //check if childrens total width is greater than the parents
-        //IF true:
-            //Remove the last childs from container, repeat until the childrens total width is not greater than its parent
-            //Display dropdown button on the far right of the parent container
-
-        //Else: Do nothing 
-
-
-
         
-        var touchmoved;
 
+        var touchmoved;
         dg_allCategoriesButton.on('touchend', function(jqEvent) {
             jqEvent.preventDefault();
             if(touchmoved != true){

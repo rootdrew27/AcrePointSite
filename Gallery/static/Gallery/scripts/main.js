@@ -5,6 +5,7 @@ $(function() {
         dotsContainer: '#customDots',
     });
 
+    $('[data-bs-toggle="tooltip"]').tooltip();
     //All image cards
     let dg_img_cards = $('.dg-img_card');
 

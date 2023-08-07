@@ -1,11 +1,8 @@
-// const { event } = require("jquery");
-
 $(function() {
     console.log("Document is Ready");
 
-    $('.categories-owl-carousel').owlCarousel({
-        pagination: false,
-        itemsMobile: [479, 3]
+    $('.owl-carousel').owlCarousel({
+        dotsContainer: '#customDots',
     });
 
     //All image cards
@@ -20,33 +17,43 @@ $(function() {
 
     //Event handler for allCategories Button (ie 'All' button)
     //Shows or hides all images (potentially deactivaes other buttons)
-        // dg_allCategoriesButton.on('click', function(jqEvent) {
-        //     var button = $(this);
-        //     //if thisButton is not activated...
-        //     //activate it
-        //     //display all images
-        //     //reset the array of categories to display (this is used in the other event to determine what images to show, but it is not necessarily representative of what categories are being shown)
+        dg_allCategoriesButton.on('click', function(jqEvent) {
+            var button = $(this);
+            //if thisButton is not activated...
+            //activate it
+            //display all images
+            //reset the array of categories to display (this is used in the other event to determine what images to show, but it is not necessarily representative of what categories are being shown)
 
-        //     //else...
-        //     //deactivate it
-        //     //hide all images
+            //else...
+            //deactivate it
+            //hide all images
 
-        //     if (button.attr('dg-activated') === undefined) {
-        //         button.attr('dg-activated', true);// activate it
-        //         dg_img_cards.parent().css('display', 'block');
+            if (button.attr('dg-activated') === undefined) {
+                button.attr('dg-activated', true);// activate it
+                dg_img_cards.parent().css('display', 'block');
 
-        //         dg_otherCategoryButtons.each(function(index, button) { // deactivate other buttons
-        //             $(button).removeAttr('dg-activated');
-        //         });
-        //         dg_activeCategories = []; //reset 
-        //     }
-        //     else {
-        //         button.removeAttr('dg-activated'); //deactivate it
-        //         dg_img_cards.parent().hide();
-        //     }
+                dg_otherCategoryButtons.each(function(index, button) { // deactivate other buttons
+                    $(button).removeAttr('dg-activated');
+                });
+                dg_activeCategories = []; //reset 
+            }
+            else {
+                button.removeAttr('dg-activated'); //deactivate it
+                dg_img_cards.parent().hide();
+            }
 
-        // });
+        });
 
+        //check if childrens total width is greater than the parents
+        //IF true:
+            //Remove the last childs from container, repeat until the childrens total width is not greater than its parent
+            //Display dropdown button on the far right of the parent container
+
+        //Else: Do nothing 
+
+
+
+        
         var touchmoved;
 
         dg_allCategoriesButton.on('touchend', function(jqEvent) {

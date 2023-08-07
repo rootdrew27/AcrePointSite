@@ -1,12 +1,25 @@
 <section class="pt-5">
     <div class="container">
-        <div class="d-flex flex-row pb-3 border-bottom categories-owl-carousel owl-theme">
-            <button type="button" class="btn dg-allcategories mx-1 " dg-activated style="">All</button>
+        <div class="d-flex flex-row owl-carousel owl-theme py-3 border-bottom border-top justify-content-evenly">
+
+            <div class="me-auto">
+                <button type="button" class="btn dg-allcategories" dg-activated>All</button>
+            </div>
+
             {% for category in categories %}
-                <button type="button" class="btn dg-category mx-1" dg-category="{{ category.title }}" style="">{{category.title}}</button>
+                <div class="me-auto">
+                    <button type="button" class="btn dg-category" dg-category="{{ category.title }}">{{category.title}}</button>
+                </div>
             {% endfor %}
+
         </div>
     </div>
+    <div id="customDots" class="owl-dots pt-2">
+        <button role="button" class="btn owl-dot active"><span></span></button>
+        <button role="button" class="btn owl-dot"><span></span></button>
+        <button role="button" class="btn owl-dot"><span></span></button>
+        <button role="button" class="btn owl-dot"><span></span></button>
+      </div>  
 </section>
 
 

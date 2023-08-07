@@ -8,6 +8,7 @@
 .btn.dg-category:hover {
     background-color: orangered;
     color:white;
+
 }
 
 .btn.dg-category[dg-activated] {
@@ -33,13 +34,34 @@
 
 /* Images */
 .dg-img {
-
     height: 250px;
     width:100%;
 }
 
-/* owl carousel */
-.categories-owl-carousel .dg-category{
-    
+/* owl dot buttons */
+.btn.owl-dot{
+    border: none;
+}
 
-  }
+#customDots{
+    border:1px;
+}
+
+/* 
+.owl-dots button.owl-dot{
+    border: 1px solid gray;
+    background: white;
+     border-radius: 50%;
+     height: 16px;
+     width: 16px;
+     position: relative;
+  } */
+
+/* owl carousel */
+
+
+/* .category-owl-carousel .item button{
+display: block;
+width: 100%;
+height: auto;
+}; */

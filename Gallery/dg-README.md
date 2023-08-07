@@ -10,4 +10,5 @@
 
 # Post-MVP
 - activeCategories array could be JS object which would allow for O(1) lookup (!! verify this)
+- vertically center category buttons (ie. allow for users to input a longer category name without it affecting the UI) 
 - Test!

@@ -20,6 +20,7 @@ Consultation -- Forms for setting up Consultation
 
 # ToDo
 - Gallery Branch (see dg-README.md)
+- lower quality of images when loading on small screens
 - Add footer
 
 # Post-MVP

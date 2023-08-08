@@ -18,6 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = secrets.getSecret("SECRET_KEY")
 
 INSTALLED_APPS = [
+    'LandingPage',
     'Gallery',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -112,6 +113,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'AcrePointSite', 'static')
 ]
 
 MEDIA_URL = 'media/'

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Gallery.models import *
+from Gallery.models import Category, ImageCard
 
 # Create your views here.
 def GalleryIndex(request):

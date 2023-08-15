@@ -3,12 +3,12 @@
 .btn.dg-category {
     color:darkgray;
     background-color: white;
+    border: none;
 }
 
 .btn.dg-category:hover {
     background-color: orangered;
     color:white;
-
 }
 
 .btn.dg-category[dg-activated] {
@@ -19,18 +19,18 @@
 /* All Category Button */
 .btn.dg-allcategories {
     color:darkgray;
-    background-color: white;
 }
 
 .btn.dg-allcategories:hover {
-    background-color: orangered;
-    color:white;
+    color:var(--bs-btn-hover-color);
+    
 }
 
-.btn.dg-allcategories[dg-activated] {
-    background-color: orangered;
-    color:white;
-}
+/* .btn.dg-allcategories[dg-activated] {
+    background-color: var(--bs-btn-active-bg);
+    color:var(--bs-btn-active-color);
+    box-shadow: var(--bs-btn-active-shadow);
+} */
 
 /* Images */
 .dg-img {
@@ -45,17 +45,18 @@
 
 #customDots{
     border:1px;
+    
 }
 
-/* 
+
 .owl-dots button.owl-dot{
     border: 1px solid gray;
-    background: white;
-     border-radius: 50%;
-     height: 16px;
-     width: 16px;
-     position: relative;
-  } */
+    background: rgb(128, 47, 47);
+    border-radius: 50%;
+    height: 20px;
+    width: 10px;
+    position: relative;
+  }
 
 /* owl carousel */
 

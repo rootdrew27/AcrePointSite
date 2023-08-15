@@ -56,4 +56,8 @@ window.addEventListener('DOMContentLoaded', event => {
         elements: '#portfolio a.portfolio-box'
     });
 
+    $('.navbar-toggler').on('click', function(){
+        $(this)
+    })
+
 });

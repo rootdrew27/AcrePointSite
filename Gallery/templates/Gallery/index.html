@@ -2,14 +2,13 @@
 {% load static %}
 
 
-{% block page_content %}
-
-
 {% block dynamic_gallery_styles %}
 <link rel="stylesheet" href="{% static 'Gallery/css/owl.carousel.css' %}">
 <link rel="stylesheet" href="{% static 'Gallery/css/owl.theme.default.css' %}"> 
 <link rel="stylesheet" href="{% static 'Gallery/css/style.css' %}">
 {% endblock %}
+
+{% block page_content %}
 
 <h2>{{ page_title }}</h2>
 

@@ -4,12 +4,6 @@ Mock Site for Diego
 
 # Color Scheme
 
-Colors:
---dark-purple: #0d0221ff;
---dark-slate-gray: #2c514cff;
---taupe-gray: #857885ff;
---ghost-white: #fafaffff;
---seal-brown: #6a381fff;
 
 # Django Apps
 
@@ -20,8 +14,9 @@ Consultation -- Forms for setting up Consultation
 
 # ToDo
 - Gallery Branch (see dg-README.md)
+- Landing Page (see lp-README.md)
 - lower quality of images when loading on small screens
-- Add footer
+- Setup global theme variables 
 
 # Post-MVP
 - Ensure that files exist b4 sending to client

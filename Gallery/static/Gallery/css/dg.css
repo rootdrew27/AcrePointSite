@@ -1,0 +1,64 @@
+
+/* Category Buttons */
+button.dg-category {
+    color: var(--bs-grey);
+    background-color: white;
+    border: none;
+    margin: 0 1px 0 1px;
+}
+
+button.dg-category:hover {
+    color:white;
+    cursor: pointer;
+}
+
+button.dg-category[dg-activated] {
+    background-color: var(--bs-btn-bg);
+    color:white;
+}
+
+/* All Category Button */
+button.dg-allCategories {
+    color:var(--bs-grey);
+    background-color: rgb(var(--bs-body-bg-rgb));
+    border: none;
+    margin: 0 1px 0 1px;
+}
+
+button.dg-allCategories:hover {
+    color:var(--bs-btn-hover-color);
+    
+}
+
+button.dg-allCategories[dg-activated] {
+    background-color: var(--bs-btn-bg);
+    color:var(--bs-btn-active-color);
+    
+}
+
+.dg-img{
+    width: 100%;
+}
+
+/* Responsive */
+@media (min-width: 200px){
+    .dg-img {
+        height: 150px;
+    }
+}
+
+@media (min-width: 300px){
+    .dg-img{
+        height: 200px;
+    }
+}
+
+@media (min-width: 480px){
+    .dg-img {
+        height: 250px;
+    }
+
+
+
+}
+

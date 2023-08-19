@@ -1,11 +1,43 @@
 $(function() {
     console.log("Document is Ready");
 
-    $('#categories-owl-carousel').owlCarousel({
-        dotsContainer: '#customDots',
+    $('.slickCarousel').slick({
+        //appendArrows: $(element)
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        mobileFirst: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 5,
+              slidesToScroll: 4,
+              dots: true
+            }
+          },       
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 3
+            }
+          },
+          {
+            breakpoint: 374,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 2
+            }
+            
+          }
+        ]
     });
 
     $('[data-bs-toggle="tooltip"]').tooltip();
+
     //All image cards
     let dg_img_cards = $('.dg-img_card');
 
@@ -15,6 +47,9 @@ $(function() {
     //Buttons
     let dg_allCategoriesButton = $('.dg-allCategories'); // the 'All' category button
     let dg_otherCategoryButtons = $('.dg-category'); //the other category buttons 
+
+
+
 
     //Event handler for allCategories Button (ie 'All' button)
     //Shows or hides all images (potentially deactivaes other buttons)
@@ -81,9 +116,6 @@ $(function() {
         }).on('touchstart', function(){
             touchmoved = false;
         });
-
-
-    
 
     //Event handler for all other buttons
     //Shows or hides image cards based on selected categories

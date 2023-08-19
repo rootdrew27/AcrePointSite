@@ -1,6 +1,6 @@
 /* Global Vars */
 :root {
-  --bs-blue: #0d6efd;
+  --bs-blue: #2767f3;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
   --bs-pink: #d63384;
@@ -11,7 +11,7 @@
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
   --bs-black: #000;
-  --bs-white: #fff;
+  --bs-white: #ffffff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
   --bs-gray-100: #f8f9fa;
@@ -82,7 +82,6 @@
   --bs-btn-disabled-bg: #018219;
   --bs-btn-disabled-border-color: #018219;
   --bs-btn-font-weight: 400; 
-  --bs-btn-bg: transparent;
   --bs-btn-border-color: transparent;
   --bs-btn-hover-color: var(--bs-link-hover-color);
   --bs-btn-hover-border-color: transparent;

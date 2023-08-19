@@ -3,21 +3,26 @@
 
 
 {% block dynamic_gallery_styles %}
-<link rel="stylesheet" href="{% static 'Gallery/css/owl.carousel.css' %}">
-<link rel="stylesheet" href="{% static 'Gallery/css/owl.theme.default.css' %}"> 
-<link rel="stylesheet" href="{% static 'Gallery/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'Gallery/css/slick.css' %}">
+<link rel="stylesheet" href="{% static 'Gallery/css/slick-theme.css' %}"> 
+<link rel="stylesheet" href="{% static 'Gallery/fonts/slick.ttf' %}">
+<link rel="stylesheet" href="{% static 'Gallery/fonts/slick.woff' %}">
+<link rel="stylesheet" href="{% static 'Gallery/css/dg.css' %}">
 {% endblock %}
 
 {% block page_content %}
 
 <h2>{{ page_title }}</h2>
 
-<div>
-  {% include "Gallery/_categories.html" %}
-</div>
+<section>
+  <div class="container">
+    {% include "Gallery/_categories.html" %}
+  </div>
+</section>
+
 
 <section class="pt-3">
-  <div class="container-lg">
+  <div class="container">
     {% include "Gallery/_images.html" %}
   </div>
 </section>
@@ -26,8 +31,8 @@
 
 
 {% block dynamic_gallery_scripts %}
-  <script src="{% static 'Gallery/scripts/owl.carousel.min.js'%}"></script>
-  <script src="{% static 'Gallery/scripts/dg.js' %}"></script>
+  <script src="{% static 'Gallery/js/slick.min.js'%}"></script> 
+  <script src="{% static 'Gallery/js/dg.js' %}"></script>
 {% endblock %}
 
 

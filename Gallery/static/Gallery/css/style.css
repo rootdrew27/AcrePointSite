@@ -1,36 +1,36 @@
 
 /* Category Buttons */
-.btn.dg-category {
-    color:darkgray;
-    background-color: white;
+li.dg-category {
+    color:var(--bs-btn-color);
+    background-color: var(--bs-btn-bg);
     border: none;
 }
 
-.btn.dg-category:hover {
-    background-color: orangered;
+li.dg-category:hover {
     color:white;
+    cursor: pointer;
 }
 
-.btn.dg-category[dg-activated] {
+li.dg-category[dg-activated] {
     background-color: orangered;
     color:white;
 }
 
 /* All Category Button */
-.btn.dg-allcategories {
-    color:darkgray;
+li.dg-allcategories {
+    color:var(--bs-btn-hover-color);
 }
 
-.btn.dg-allcategories:hover {
+li.dg-allcategories:hover {
     color:var(--bs-btn-hover-color);
     
 }
 
-/* .btn.dg-allcategories[dg-activated] {
+li.dg-allcategories[dg-activated] {
     background-color: var(--bs-btn-active-bg);
     color:var(--bs-btn-active-color);
     box-shadow: var(--bs-btn-active-shadow);
-} */
+}
 
 /* Images */
 .dg-img {
@@ -38,31 +38,3 @@
     width:100%;
 }
 
-/* owl dot buttons */
-.btn.owl-dot{
-    border: none;
-}
-
-#customDots{
-    border:1px;
-    
-}
-
-
-.owl-dots button.owl-dot{
-    border: 1px solid gray;
-    background: rgb(128, 47, 47);
-    border-radius: 50%;
-    height: 20px;
-    width: 10px;
-    position: relative;
-  }
-
-/* owl carousel */
-
-
-/* .category-owl-carousel .item button{
-display: block;
-width: 100%;
-height: auto;
-}; */

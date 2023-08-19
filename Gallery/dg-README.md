@@ -6,6 +6,8 @@
 - Image aspect ratio
 - add more bounce to buttons 
 - make script modular if possible (use functions for general tasks which may be used again)
+- Add text to indicate when no results appear (also, suggest choosing a new category
+)
 
 
 # Post-MVP

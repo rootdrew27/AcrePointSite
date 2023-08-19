@@ -1,25 +1,48 @@
 <section class="pt-5 data-bs-toggle="tooltip" data-bs-placement="top" title=""">
     <div class="container">
-        <div id="categories-owl-carousel" class="d-flex flex-row owl-carousel owl-theme py-3 border-bottom border-top justify-content-evenly">
+
+        {% comment %} <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#filter">
+            Filter
+        </button>
+
+        <div id="filter" class="collapse">
+                {% for category in categories %}
+                <button class="btn btn-primary" dg-activated dg-category="{{ category.title }}">{{ category.title }}</button>
+                {% endfor %}
+        </div> {% endcomment %}
+
+        <nav class="navbar navbar-expand-md pt-3" id="GalleryFilter">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#GalleryFilterOptions" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span>Filter</span></button> <!--ToDo: replace icon -->
+            <div class="collapse navbar-collapse" id="GalleryFilterOptions">
+                <ul class="navbar-nav me-auto my-2 my-lg-0">
+                    <li class="btn btn-primary nav-item p-3 dg-allCategories" dg-activated dg-category="All">All</li>
+                    {% for category in categories %}
+                    <li class="btn btn-primary nav-item p-3 dg-category" dg-category="{{ category.title }}">{{ category.title }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </nav>
+
+        {% comment %} <div id="categories-owl-carousel" class="d-flex flex-row owl-carousel owl-theme py-3 border-bottom border-top justify-content-evenly">
 
             <div class="me-auto">
-                <button type="button btn-primary" class="btn dg-allcategories" dg-activated>All</button>
+                <button type="button" class="btn btn-primary dg-allcategories" dg-activated>All</button>
             </div>
 
             {% for category in categories %}
                 <div class="me-auto">
-                    <button type="button" class="btn dg-category" dg-category="{{ category.title }}">{{category.title}}</button>
+                    <button type="button" class="btn btn-primary dg-category" dg-category="{{ category.title }}">{{category.title}}</button>
                 </div>
             {% endfor %}
 
-        </div>
+        </div> {% endcomment %}
     </div>
-    <div id="customDots" class="owl-dots pt-2">
+    {% comment %} <div id="customDots" class="owl-dots pt-2">
         <button role="button" class="btn owl-dot active"><span></span></button>
         <button role="button" class="btn owl-dot"><span></span></button>
         <button role="button" class="btn owl-dot"><span></span></button>
         <button role="button" class="btn owl-dot"><span></span></button>
-      </div>  
+      </div>   {% endcomment %}
 </section>
 
 

@@ -17,6 +17,7 @@ Consultation -- Forms for setting up Consultation
 - Landing Page (see lp-README.md)
 - lower quality of images when loading on small screens
 - Setup global theme variables 
+- Minify project_style.css
 
 # Post-MVP
 - Ensure that files exist b4 sending to client

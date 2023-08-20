@@ -1,16 +1,15 @@
-{% load static %}
 <div class="row">
-
-{% for image_card_tuple in image_cards_with_categories %}
-        <div class="col-sm-12 col-md-6  col-xl-4 py-3 px-3">
-                <div class="card h-100 dg-img_card" dg-categories="{{ image_card_tuple.1 }}">
-                    <img src="{{ image_card_tuple.0.image.url }}" alt="" class="dg-img card-img-top">
-                    <div class="card-body">
-                            <a href="{% url 'GalleryDetail' pk=image_card_tuple.0.pk %}" class="btn btn-primary" style="color: white">See More</a>
-                    </div>
-                </div>
+  {% for item, categories in items_with_categories %}
+    <div class="col-sm-12 col-md-6  col-xl-4 py-3 px-3">
+      <div class="card h-100 dg-img_card" dg-categories="{{ categories }}">
+        <img src="{{ item.image.url }}" alt="" class="dg-img card-img-top">
+        <div class="card-body">
+					<h5 class="card-title">{{item.title}}</h5>
+					<a href="{% url 'GalleryDetail' pk=item.pk %}" class="btn btn-primary btn-sm card-button">See More</a> <!-- Position button to the far right of the title-->
+					<p class="card-text">{{item.body_tex}}</p>
         </div>
-{% endfor %}
-
+      </div>
+    </div>
+  {% endfor %}
 </div>
 

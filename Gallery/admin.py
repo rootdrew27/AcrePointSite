@@ -1,12 +1,12 @@
 from django.contrib import admin
-from Gallery.models import Category, ImageCard
+from Gallery.models import GalleryCategory, GalleryItem
 # Register your models here.
 
-class CategoryAdmin(admin.ModelAdmin):
+class GalleryCategoryAdmin(admin.ModelAdmin):
     pass
 
-class ImageCardAdmin(admin.ModelAdmin):
+class GalleryItemAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(ImageCard, ImageCardAdmin)
+admin.site.register(GalleryCategory, GalleryCategoryAdmin)
+admin.site.register(GalleryItem, GalleryItemAdmin)

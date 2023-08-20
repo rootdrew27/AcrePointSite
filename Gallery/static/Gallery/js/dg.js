@@ -19,7 +19,7 @@ $(function() {
             }
           },       
           {
-            breakpoint: 800,
+            breakpoint: 767,
             settings: {
               slidesToShow: 4,
               slidesToScroll: 3
@@ -84,7 +84,7 @@ $(function() {
         var touchmoved;
         dg_allCategoriesButton.on('touchend', function(jqEvent) {
             jqEvent.preventDefault();
-            if(touchmoved != true){
+            if(touchmoved != true){ //see bottom of function for details on touchmoved
 
                 var button = $(this);
                 //if thisButton is not activated...
@@ -109,9 +109,8 @@ $(function() {
                     button.removeAttr('dg-activated');
                     dg_img_cards.parent().hide();
                 }
-            }
-
-        }).on('touchmove', function(e){
+            //Note: touchstart fires first, then touchmove and finally touch end when the finger is lifted off of the screen
+            }}).on('touchmove', function(e){
             touchmoved = true;
         }).on('touchstart', function(){
             touchmoved = false;
@@ -188,8 +187,9 @@ $(function() {
 
         button.on('touchend', function(jqEvent) {
             jqEvent.preventDefault();
-            if (touchmoved != true){
+            if (touchmoved != true){//see bottom of function for details on touchmoved
             var button = $(this);
+
             //IF this button is not activated...
             //activate it
             //deactivate 'All' button
@@ -248,13 +248,12 @@ $(function() {
                     img_card.parent().hide();
                 }
             });
-
-        }
-        }).on('touchmove', function(e){
+        //Note: touchstart fires first, then touchmove and finally touch end when the finger is lifted off of the screen
+        }}).on('touchmove', function(e){
             touchmoved = true;
         }).on('touchstart', function(){
             touchmoved = false;
-        });
+        }); //Note: touchstart fires first, then touchmove and finally touch end when the finger is lifted off of the screen
 
     });
 });

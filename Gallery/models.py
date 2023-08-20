@@ -7,19 +7,20 @@ from django.core.files import File
 
 
 # Create your models here.
-class Category(models.Model):
+class GalleryCategory(models.Model):
     title = models.CharField(max_length=50)
 
     def __str__(self):
         return self.title
 
 
-class ImageCard(models.Model):
-    description = models.CharField(null=True, blank=True, max_length=200)
+class GalleryItem(models.Model):
+    title = models.CharField(max_length=50)
+    body_text = models.CharField(null=True, blank=True, max_length=250)
     image = models.ImageField(upload_to="Gallery/", blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
-    categories = models.ManyToManyField('Category', related_name='image_cards', default='NA')
+    categories = models.ManyToManyField('GalleryCategory', related_name='gallery_item', default='NA')
 
     
     #ToDo: order by 'most clicks' or by Diegos preference
@@ -27,6 +28,7 @@ class ImageCard(models.Model):
         ordering = ["-date_created"]
 
     def __str__(self):
-        return self.description
+        return self.title
         
-    
+
+#ToDo: Create a model that stores door panel style (GalleryItem should have a many-to-one relation with this table) 

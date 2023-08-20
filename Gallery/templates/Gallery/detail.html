@@ -3,7 +3,7 @@
 
 {% block page_content %}
 
-  <img src="{% get_static_prefix %}{{ path_to_imgs }}{{ image_card.image }}" alt="" class="object-fit-cover">
+  <img src="{{ item.image.url }}" alt="" class="object-fit-cover">
   
 {% endblock %}
 

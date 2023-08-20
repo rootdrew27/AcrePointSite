@@ -1,14 +1,24 @@
-<section class="pt-5 data-bs-toggle="tooltip" data-bs-placement="top" title=""">
-    <div class="container slickCarousel-content">
+<div>
+    <h2 class="text-center">Project Categories</h2>
+</div>
 
+<hr class="divider divider-green">
+
+<div>
+    <div class="container slickCarousel-content">
         <div id="" class="slickCarousel" role="listbox">
             <button type="button" class="btn btn-primary btn-sm dg-allCategories px-2" dg-activated>All</button>
             {% for category in categories %}
-                <button type="button" class="btn btn-primary btn-sm dg-category px-2" dg-category="{{ category.title }}">{{category.title}}</button>
+                <button type="button" class="btn btn-primary btn-sm dg-category px-2" dg-category="{{ category.title }}">{{ category.title }}</button>
             {% endfor %}
         </div>
     </div>
-</section>
+</div>
+
+
+   
+
+
 
 
 

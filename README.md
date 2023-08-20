@@ -16,6 +16,7 @@ Consultation -- Forms for setting up Consultation
 - lower quality of images when loading on small screens
 - Setup global theme variables 
 - set the navbar to only display the logo and collapse button and a certain width
+- use a more sophisticated font
 
 # Post-MVP
 - Ensure that files exist b4 sending to client
@@ -27,3 +28,5 @@ Consultation -- Forms for setting up Consultation
 # Notes
 - loading in scripts after all other scripts (of the base.html file) may cause conflicts 
   you may want to load in jquery on a per app basis (by default) but, you may be able to use logic to prevent scripts from loading twice
+
+- ALWAYS dump sql database before updating an existing model 

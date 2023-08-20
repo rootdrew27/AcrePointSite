@@ -119,10 +119,8 @@
 }
 
 /* Custom */
-
-
 .slickCarousel-content{
     margin: auto;
-    padding: 20px;
-    width: 80%;
+    padding: 15px 20px 15px 20px;
+    width: 90%;
 }

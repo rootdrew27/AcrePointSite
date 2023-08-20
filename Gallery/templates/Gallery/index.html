@@ -3,25 +3,32 @@
 
 
 {% block dynamic_gallery_styles %}
-<link rel="stylesheet" href="{% static 'Gallery/css/slick.css' %}">
-<link rel="stylesheet" href="{% static 'Gallery/css/slick-theme.css' %}"> 
-<link rel="stylesheet" href="{% static 'Gallery/fonts/slick.ttf' %}">
-<link rel="stylesheet" href="{% static 'Gallery/fonts/slick.woff' %}">
-<link rel="stylesheet" href="{% static 'Gallery/css/dg.css' %}">
+<link rel="stylesheet" href="{% static 'Gallery/css/slick.css' %}" />
+<link rel="stylesheet" href="{% static 'Gallery/css/slick-theme.css' %}" /> 
+<link rel="stylesheet" href="{% static 'Gallery/fonts/slick.ttf' %}" />
+<link rel="stylesheet" href="{% static 'Gallery/fonts/slick.woff' %}" />
+<link rel="stylesheet" href="{% static 'Gallery/css/dg.css' %}" />
 {% endblock %}
 
 {% block page_content %}
 
-<h2>{{ page_title }}</h2>
-
-<section>
+<section class="page-section bg-primary" title="page summary"> <!-- Welcome to the Gallery -->
   <div class="container">
-    {% include "Gallery/_categories.html" %}
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="text-white">Welcome to the Gallery!</h2>
+        <hr class="divider divider-light">
+        <p class="text-white-75">Browse our projects. Utilize the Project Categories carousel to filter what you see. </p>
+      </div>
+    </div>
   </div>
 </section>
 
+<section class="page-section pt-5">
+  <div class="container">
+    {% include "Gallery/_categories.html" %}
+  </div>
 
-<section class="pt-3">
   <div class="container">
     {% include "Gallery/_images.html" %}
   </div>

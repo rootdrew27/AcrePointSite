@@ -93,6 +93,11 @@
   --bs-btn-focus-shadow-rgb: 246, 122, 88;
 }
 
+/* This class identifies the first section of each page (if necessary*/
+.first-section{
+  margin-top: 72px;
+}
+
 .btn {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;

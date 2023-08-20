@@ -16,7 +16,9 @@ Consultation -- Forms for setting up Consultation
 - lower quality of images when loading on small screens
 - Setup global theme variables 
 - set the navbar to only display the logo and collapse button and a certain width
-- use a more sophisticated font
+- use a more sophisticated font 
+- Figure out which CSS is needed (remove excess)
+- navbar collapse on scroll (or swipe)
 
 # Post-MVP
 - Ensure that files exist b4 sending to client

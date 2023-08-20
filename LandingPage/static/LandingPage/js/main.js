@@ -9,6 +9,7 @@
 
 window.addEventListener('DOMContentLoaded', event => {
 
+    
     // // Navbar shrink function
     // var navbarShrink = function () {
     //     const navbarCollapsible = document.body.querySelector('#mainNav');
@@ -52,12 +53,8 @@ window.addEventListener('DOMContentLoaded', event => {
     // });
 
     // Activate SimpleLightbox plugin for portfolio items
-    new SimpleLightbox({
-        elements: '#portfolio a.portfolio-box'
-    });
-
-    $('.navbar-toggler').on('click', function(){
-        $(this)
-    })
+    // new SimpleLightbox({
+    //     elements: '#portfolio a.portfolio-box'
+    // });
 
 });

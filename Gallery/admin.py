@@ -1,6 +1,6 @@
 from django.contrib import admin
 from Gallery.models import GalleryCategory, GalleryItem
-# Register your models here.
+
 
 class GalleryCategoryAdmin(admin.ModelAdmin):
     pass

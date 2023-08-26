@@ -20,6 +20,7 @@ SECRET_KEY = secrets.getSecret("SECRET_KEY")
 INSTALLED_APPS = [
     'LandingPage',
     'Gallery',
+    'Services',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

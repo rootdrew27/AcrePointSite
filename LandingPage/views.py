@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from Gallery.models import GalleryItem
 
-# Create your views here.
+
 def LandingPageIndex(request):
     gallery_items = GalleryItem.objects.all()[:6]
     
@@ -15,3 +15,4 @@ def LandingPageIndex(request):
         'gallery_items_with_categories': gallery_item_with_categories
     }
     return render(request, 'LandingPage/index.html', context)
+

@@ -29,3 +29,4 @@ class Secrets():
         except KeyError:
             error_msg = "Set the {0} environment variable".format(setting)
             raise ImproperlyConfigured(error_msg)
+        

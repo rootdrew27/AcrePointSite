@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block services_styles %}
+{% endblock %}
+
+{% block page_content %}
+  <section class="page-section bg-secondary" title="page summary">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="text-white">View Our Services!</h2>
+          <hr class="divider divider-light">
+          <p class="text-white-75">Services are listed below of the Services that we provide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<section class="page-section">
+	<div class="container">
+		{% include "Services/_serviceCards.html"%}
+	</div>
+</section>
+
+{% endblock %}
+
+{% block services_scripts %}
+{% endblock %}

@@ -13,7 +13,7 @@ Consultation -- Forms for setting up Consultation
 # ToDo
 - Gallery Branch (see dg-README.md)
 - Landing Page (see lp-README.md)
-- lower quality of images when loading on small screens
+
 - Setup global theme variables 
 - set the navbar to only display the logo and collapse button and a certain width
 - use a more sophisticated font 
@@ -22,6 +22,7 @@ Consultation -- Forms for setting up Consultation
 
 # Post-MVP
 - Ensure that files exist b4 sending to client
+- lower quality of images when loading on small screens
 - optimize querys (in Gallery IndexView, a better should be made to get all the data needed)
 - Alter (in some way) the Gallery models s.t. the model fields accurately reflect the models' relationships
 - improve JS efficency: run tests to see if it is better to query the dom, or to loop over small number of elements

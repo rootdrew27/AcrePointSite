@@ -3,8 +3,22 @@
 
 {% block page_content %}
 
-  <img src="{{ item.image.url }}" alt="" class="object-fit-cover">
-  
+<section class="pb-3 pt-5">
+  <div class="container">
+    <div class="bg-image pt-5" alt="" style="background-image: url('{{ item.image.url }}');  height: 450px;">
+    </div>
+  </div>
+</section>
+
+<section class="" style="padding-bottom: 4rem">
+  <div class="card">
+    <h5 class="card-header">{{ item.title }}</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{ item.subtitle }}</h5>
+      <p class="card-text">{{ item.description }}{% lorem 1 b random %}</p>
+    </div>
+  </div>
+</section>
 {% endblock %}
 
 

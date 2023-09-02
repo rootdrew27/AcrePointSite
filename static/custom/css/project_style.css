@@ -93,6 +93,13 @@
   --bs-btn-focus-shadow-rgb: 246, 122, 88;
 }
 
+.bg-image{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
 /* This class identifies the first section of each page (if necessary*/
 .first-section{
   margin-top: 72px;

@@ -1,6 +1,6 @@
 # AcrePointSite 
 
-Mock Site for Diego
+Django Site for Acre Point Cabinets
 
 # Color Scheme
 
